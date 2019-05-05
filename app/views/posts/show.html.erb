@@ -6,7 +6,7 @@
   <%end%>
 </ul>
 <%@post.comments.each do |comment|%>
-  <p><%=comment.content%></p>
+  <p><%=comment.user.username + ' says: ' + comment.content%></p>
 <%end%>
 <ul>
   <%@post.comments.collect{|comment| comment.user}.uniq.each do |user|%>
