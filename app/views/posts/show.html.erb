@@ -9,8 +9,8 @@
   <p><%=comment.content if comment%></p>
 <%end%>
 <ul>
-  <%@post.comments.collect{|comment| comment.user if comment}.uniq.each do |user|%>
-    <li><%=link_to user.username, user_path(user)%></li>
+  <%@post.comments.collect{|comment| comment.user}.uniq.each do |user|%>
+    <li><%=link_to user.username, user_path(user) if user%></li>
   <%end%>
 </ul>
 <%= form_for @new_comment do |f| %>
